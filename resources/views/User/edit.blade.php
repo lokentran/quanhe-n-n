@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="{{ route('user.add') }}" method="post">
+        <form action="{{ route('user.edit', $user->id) }}" method="post">
             @csrf
             <div class="form-group">
                 <p>User Name</p>

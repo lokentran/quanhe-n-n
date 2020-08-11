@@ -38,4 +38,20 @@ class UserController extends Controller
         return view('User.edit', compact('user','roles','users'));
     }
 
+    public function edit(Request $request, $id) {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->roles()->sync($request->role);
+        $user->save();
+        return redirect()->route('user.all');
+    }
+
+    public function delete($id) {
+        $user = User::findOrFail($id);
+        $user->roles()->detach();
+        $user->delete();
+        return redirect()->route('user.all');
+    }
+
 }

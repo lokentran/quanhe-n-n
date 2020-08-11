@@ -18,3 +18,4 @@ Route::get('/create', 'UserController@showFormAdd')->name('user.formAdd');
 Route::post('/create', 'UserController@add')->name('user.add');
 Route::get('/{id}/edit', 'UserController@showFormEdit')->name('user.formEdit');
 Route::post('/{id}/edit', 'UserController@edit')->name('user.edit');
+Route::get('/{id}/delete', 'UserController@delete')->name('user.delete');

@@ -55,6 +55,7 @@
                     
                     </td>
                     <td><a class="btn btn-primary" href="{{ route('user.formEdit', $user->id) }}">Edit</a></td>
+                    <td><a class="btn btn-primary" href="{{ route('user.delete', $user->id) }}">Delete</a></td>
                 </tr>
             @endforeach
            
